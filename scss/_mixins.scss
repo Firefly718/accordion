@@ -1,0 +1,50 @@
+@mixin text($color: inherit, $family: inherit, $size: 1.6rem, $weight: 400, $line: 1.7) {
+    color: $color;
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
+@mixin tr {
+    transition: all .4s ease-in;
+}
+
+@mixin hover {
+    @include tr();
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin posCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin bgCenter {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin iconCenter {
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: 15%;
+    width: 60px;
+    height: 60px;
+}
+
+@mixin imgSize {
+    height: 224px;
+    width: calc(100vw/5);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
